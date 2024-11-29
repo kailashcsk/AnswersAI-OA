@@ -8,12 +8,13 @@ export default {
     extend: {
       borderWidth: {
         '0.5': '0.5px',
+        '0.67': '0.67px',
       },
       colors: {
         'custom-green': '#C8E972',
         neutral: {
           400: '#9CA3AF',
-          800: '#1F2937',
+          800: '#242424',
           900: '#111827',
         },
       },
