@@ -1,0 +1,27 @@
+import { ChevronDown } from 'lucide-react';
+
+interface ChevronDownButtonProps {
+    onClick?: () => void;
+    className?: string;
+}
+
+const ChevronDownButton: React.FC<ChevronDownButtonProps> = ({
+    onClick,
+    className = ''
+}) => {
+    return (
+        <div className="flex items-center justify-center w-full h-full bg-#18181A80">
+            <button
+                onClick={onClick}
+                className={`relative flex items-center justify-center w-[44px] h-[34px] rounded-3xl border-2 border-[#C8E972] ${className}`}
+            >
+                <ChevronDown
+                    className="w-[24px] h-[24px] text-[#C8E972]"
+                    strokeWidth={2}
+                />
+            </button>
+        </div>
+    );
+};
+
+export default ChevronDownButton;
