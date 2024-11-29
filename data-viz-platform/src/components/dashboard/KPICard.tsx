@@ -13,7 +13,7 @@ interface KPICardProps {
 
 const KPICard: React.FC<KPICardProps> = ({ title, value, description }) => {
     return (
-        <div className="bg-[#222324] p-[30px] rounded-lg h-[236px] flex flex-col justify-between border border-[#525252]">
+        <div className="bg-[#222324] p-[30px] rounded-[5px] h-[236px] flex flex-col justify-between border border-[#525252]">
             <div className="flex justify-between items-start pt-2">
                 <div>
                     <div className='pb-2'>

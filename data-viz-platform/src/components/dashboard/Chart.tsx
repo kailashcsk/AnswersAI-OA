@@ -35,7 +35,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 const Chart: React.FC<ChartProps> = ({ data, selectedMetric }) => {
     const dispatch = useDispatch();
     return (
-        <div className="bg-[#1C1C1C] p-6 rounded-lg border border-[#2A2A2A]">
+        <div className="bg-[#222324] p-6 rounded-[5px] border border-[#525252]">
             <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-medium">Graphs</h3>
                 <select
@@ -48,7 +48,7 @@ const Chart: React.FC<ChartProps> = ({ data, selectedMetric }) => {
                 </select>
             </div>
 
-            <div className="h-[300px]">
+            <div className='h-[400px]'>
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={data}>
                         <CartesianGrid

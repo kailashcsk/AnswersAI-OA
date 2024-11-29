@@ -45,12 +45,14 @@ const DashboardLayout = () => {
 
     return (
 
-        <div className="flex-1 min-h-0 p-10 bg-[#161618] overflow-auto border border-[#525252] rounded-lg">
+        <div className="flex-1 h-screen bg-[#161618] relative">
+            <div className="absolute inset-0 overflow-y-auto">
+                <div className="min-h-full p-10 pb-24 border border-[#525252] rounded-lg">
             {/* Dashboard Header */}
             <div className="flex justify-between items-center mb-8">
                 {/* Left Section */}
                 <div className="flex items-center gap-2">
-                    <Zap className="lightning-icon fill-current pr-2" />
+                    <Zap className="lightning-icon fill-current pr-2" /> 
                     <h1 className="charging-station-heading">Charging Station</h1>
                 </div>
 
@@ -106,13 +108,13 @@ const DashboardLayout = () => {
                 </div>
                 <ScenarioCard />
             </section>
-    
-                {/* Chart and KPIs */}
-            <div className="grid grid-cols-12 gap-6 pt-2">
+
+            {/* Chart and KPIs */}
+            <div className="grid grid-cols-12 gap-6 pt-2 mb-10">
                 <div className="col-span-8">
                     <div className="flex justify-between items-center pb-4">
-                        <h2 className="text-[24px] font-[600] leading-[36px] text-left no-underline decoration-skip-ink-none font-roobert">Key Performance Indicators</h2>
-                        </div>
+                        <h2 className="text-[24px] font-[600] leading-[36px] text-left no-underline decoration-skip-ink-none font-roobert">Graphs</h2>
+                    </div>
                     <Chart
                         data={chartData}
                         selectedMetric={selectedChartMetric}
@@ -121,7 +123,7 @@ const DashboardLayout = () => {
                 <div className="col-span-4 space-y-4">
                     <div className="flex justify-between items-center">
                         <h2 className="text-[24px] font-[600] leading-[36px] text-left no-underline decoration-skip-ink-none font-roobert">Key Performance Indicators</h2>
-                        <button className="bg-[#18181A80] px-3 py-1 rounded-lg text-sm border border-[#5A5A5AA1] text-[#FCFCFC] font-[500] font">
+                        <button className="bg-[#18181A80] px-3 py-1 rounded-lg text-sm border border-[#5A5A5AA1] text-[#FCFCFC] font-[500] font rounded-[5px]">
                             Variables +
                         </button>
                     </div>
@@ -132,7 +134,9 @@ const DashboardLayout = () => {
                     </div>
                 </div>
             </div>
-            <RightPanel />  
+            <RightPanel />
+        </div>
+        </div>
         </div>
 
 
