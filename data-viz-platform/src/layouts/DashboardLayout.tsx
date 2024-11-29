@@ -88,7 +88,7 @@ const DashboardLayout = () => {
             </div>
 
             { /* Scenario Results */}
-            <section className="mb-8">
+            <section className="mb-8 ">
                 <div className="flex justify-between items-center mb-2">
                     <div className="flex items-center gap-2 mb-3">
                         <Sparkles
@@ -106,39 +106,36 @@ const DashboardLayout = () => {
                 </div>
                 <ScenarioCard />
             </section>
-
-            {/* Main Content Grid */}
-            <div className="grid grid-cols-4 gap-6">
-                <div className="col-span-3">
-                    <div className="bg-black border border-neutral-800 rounded-lg p-4">
-                        <div className="flex justify-between items-center mb-4">
-                            <h2 className="text-lg font-medium text-white">Graphs</h2>
-                            <select className="bg-neutral-900 text-sm text-white px-3 py-1.5 rounded-lg border border-neutral-800">
-                                <option>Unsatisfied Demand %</option>
-                            </select>
+    
+                {/* Chart and KPIs */}
+            <div className="grid grid-cols-12 gap-6 pt-2">
+                <div className="col-span-8">
+                    <div className="flex justify-between items-center pb-4">
+                        <h2 className="text-[24px] font-[600] leading-[36px] text-left no-underline decoration-skip-ink-none font-roobert">Key Performance Indicators</h2>
                         </div>
-                        <Chart
-                            data={chartData}
-                            selectedMetric={selectedChartMetric}
-                        />
-                    </div>
+                    <Chart
+                        data={chartData}
+                        selectedMetric={selectedChartMetric}
+                    />
                 </div>
-                <div className="col-span-1">
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-lg font-medium text-white">Key Performance Indicators</h2>
-                        <button className="bg-neutral-900 px-3 py-1 rounded-lg text-sm text-white">
+                <div className="col-span-4 space-y-4">
+                    <div className="flex justify-between items-center">
+                        <h2 className="text-[24px] font-[600] leading-[36px] text-left no-underline decoration-skip-ink-none font-roobert">Key Performance Indicators</h2>
+                        <button className="bg-[#18181A80] px-3 py-1 rounded-lg text-sm border border-[#5A5A5AA1] text-[#FCFCFC] font-[500] font">
                             Variables +
                         </button>
                     </div>
-                    <div className="grid grid-cols-1 gap-4">
+                    <div className="grid grid-cols-2 gap-6">
                         {kpiData.map((kpi) => (
                             <KPICard key={kpi.id} {...kpi} />
                         ))}
                     </div>
                 </div>
             </div>
-            <RightPanel />
+            <RightPanel />  
         </div>
+
+
 
 
     );

@@ -19,6 +19,7 @@ export default {
       },
       fontFamily: {
         roobert: ['"Roobert TRIAL"', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
   },
