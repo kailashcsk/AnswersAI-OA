@@ -1,0 +1,5 @@
+@layer utilities {
+    .border-custom-green {
+        border: 0.5px solid #C8E972;
+    }
+}
