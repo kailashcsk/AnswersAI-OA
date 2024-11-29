@@ -12,6 +12,9 @@ export default {
       colors: {
         'custom-green': '#C8E972',
       },
+      fontFamily: {
+        roobert: ['"Roobert TRIAL"', 'sans-serif'],
+      },
 },
   },
   plugins: [],
