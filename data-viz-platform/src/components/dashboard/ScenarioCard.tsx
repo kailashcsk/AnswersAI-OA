@@ -1,6 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
+import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 
 const ScenarioCard = () => {
     // Get scenario results from Redux store
@@ -11,17 +13,19 @@ const ScenarioCard = () => {
             {scenarioResults.map((scenario) => (
                 <div
                     key={scenario.id}
-                    className="p-4 rounded-lg border border-[#3A3A3A] bg-[#1C1C1C] flex justify-between items-center"
+                    className="bg-black rounded-lg p-4 bg-[#CCFF0005] border border-custom-green "
                 >
-                    <p className="text-[#B4FF39] text-sm">
-                        {scenario.description}
-                    </p>
-                    <button
-                        className="text-gray-400 hover:text-white transition-colors"
-                        aria-label="More options"
-                    >
-                        ⋯
-                    </button>
+                    
+                    <div className="flex justify-between items-center">
+                        <p className="text-[#C9FF3B] text-[16px] font-medium leading-6 text-left no-underline decoration-skip-ink-none font-inter">
+                            {scenario.description}
+                        </p>
+                        <button
+                            className="text-[#C8E972] flex items-center justify-center rounded-full pr-4"
+                            aria-label="More options">
+                            <FontAwesomeIcon icon={faEllipsis} className='w-[24px] h-[24px]'/>
+                        </button>
+                    </div>
                 </div>
             ))}
         </div>

@@ -11,11 +11,16 @@ export default {
       },
       colors: {
         'custom-green': '#C8E972',
+        neutral: {
+          400: '#9CA3AF',
+          800: '#1F2937',
+          900: '#111827',
+        },
       },
       fontFamily: {
         roobert: ['"Roobert TRIAL"', 'sans-serif'],
       },
-},
+    },
   },
   plugins: [],
 }
