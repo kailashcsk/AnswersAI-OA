@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import Header from '../layouts/Header';
 import DashboardLayout from '../layouts/DashboardLayout';

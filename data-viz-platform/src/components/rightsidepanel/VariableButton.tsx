@@ -1,5 +1,3 @@
-// components/rightsidepanel/VariableButton.tsx
-import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Sparkles, Plus, Check } from 'lucide-react';
 import { setActiveVariable } from '../../store/silces/rightPanelSlice';

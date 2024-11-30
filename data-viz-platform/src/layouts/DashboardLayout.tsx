@@ -19,8 +19,6 @@ const DashboardLayout = () => {
     const dispatch = useDispatch();
     const {
         kpiData,
-        chartData,
-        selectedChartMetric,
         isLoading,
         error
     } = useSelector((state: RootState) => state.dashboard);

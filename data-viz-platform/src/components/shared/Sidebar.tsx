@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { signOut } from 'firebase/auth';
@@ -13,7 +12,6 @@ import {
     faBell,
     faClipboardList,
     faGear,
-    faUserCircle,
     faBars,
     faCloudArrowUp
 } from '@fortawesome/free-solid-svg-icons';
