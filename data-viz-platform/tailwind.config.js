@@ -37,6 +37,10 @@ export default {
       animation: {
         'fadeIn': 'fadeIn 0.3s ease-out forwards'
       },
+      backdropBlur: {
+        xs: '2px',
+        sm: '4px',
+      },
     },
   },
   plugins: [],

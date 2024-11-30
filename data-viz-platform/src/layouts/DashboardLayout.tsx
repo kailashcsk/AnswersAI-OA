@@ -28,6 +28,7 @@ const DashboardLayout = () => {
     const toggleScenarioCollapse = () => {
         setIsScenarioCollapsed(!isScenarioCollapsed);
     };
+    const isRightPanelOpen = useSelector((state: RootState) => state.rightPanel.isOpen);
 
     useEffect(() => {
         dispatch(setLoading(true));
@@ -40,6 +41,8 @@ const DashboardLayout = () => {
         }
     }, [dispatch]);
 
+    
+
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -48,10 +51,12 @@ const DashboardLayout = () => {
         return <div>Error: {error}</div>;
     }
 
+
+
     return (
 
         <div className="flex-1 h-screen bg-[#161618] relative">
-            <div className="absolute inset-0 overflow-y-auto">
+            <div className={`absolute inset-0 overflow-y-auto transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px]' : ''}`}>
                 <div className="min-h-full p-10 pb-24 border border-[#525252] rounded-lg">
                     {/* Dashboard Header */}
                     <div className="flex justify-between items-center mb-8">
@@ -148,8 +153,13 @@ const DashboardLayout = () => {
                             </div>
                         </div>
                     </div>
-                    <RightSidePanel />
+                
+                    
                 </div>
+            </div>
+            <div className={`fixed right-0 top-0 h-full z-50 transition-transform duration-300 ease-in-out
+                ${isRightPanelOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+                <RightSidePanel />
             </div>
         </div>
 
