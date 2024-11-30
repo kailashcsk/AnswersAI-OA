@@ -1,24 +1,34 @@
 import React, { useState } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
-import { Home, Bell, BarChart2, Building2, Settings, LogOut, Menu } from 'lucide-react';
+import { useDispatch } from 'react-redux';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../config/firebase';
-import { useDispatch } from 'react-redux';
-import type { AppDispatch } from '../../store/store';
 import { clearAuth } from '../../store/silces/authSlice';
+import ProfileMenu from './ProfileMenu';
+
+// Import FontAwesome components
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faHome,
+    faBell,
+    faClipboardList,
+    faGear,
+    faUserCircle,
+    faBars,
+    faCloudArrowUp
+} from '@fortawesome/free-solid-svg-icons';
 
 const Sidebar = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-    const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useDispatch();
 
     const navigationItems = [
-        { icon: Home, path: '/', label: 'Home' },
-        { icon: Bell, path: '/notifications', label: 'Notifications' },
-        { icon: BarChart2, path: '/dashboard', label: 'Dashboard' },
-        { icon: Building2, path: '/building', label: 'Building' },
-        { icon: Settings, path: '/settings', label: 'Settings' }
+        { icon: faHome, path: '/', label: 'Home' },
+        { icon: faBell, path: '/notifications', label: 'Notifications' },
+        { icon: faClipboardList, path: '/dashboard', label: 'Dashboard' },
+        { icon: faCloudArrowUp, path: '/building', label: 'Building' },
+        { icon: faGear, path: '/settings', label: 'Settings' }
     ];
 
     const handleLogout = async () => {
@@ -32,39 +42,58 @@ const Sidebar = () => {
     };
 
     return (
-        <aside className={`bg-black flex flex-col h-screen fixed left-0 top-0 transition-all duration-300 ${isExpanded ? 'w-48' : 'w-16'}`}>
+        <aside className={`bg-black flex flex-col h-screen fixed left-0 top-0 transition-all duration-300 w-[80px]  `}>
             <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="h-14 flex items-center justify-center hover:bg-neutral-900 transition-colors border-b border-neutral-800"
+                onClick={() => navigate('/')}
+                className="h-[79px] flex items-center justify-center"
+                type="button"
             >
-                <Menu className="w-5 h-5 text-neutral-400" strokeWidth={1.5} />
+                <div className="p-3 pt-5 rounded-[10px] transition-colors flex items-center justify-center h-[40px] w-[40px]">
+                    <FontAwesomeIcon
+                        icon={faBars}
+                        className="w-5 h-5 text-white"
+                    />
+                </div>
             </button>
 
-            {navigationItems.map(({ icon: Icon, path, label }) => (
-                <Link
-                    key={path}
-                    to={path}
-                    className={`h-16 flex items-center transition-colors
-                        ${isExpanded ? 'px-4 gap-3' : 'justify-center'}
-                        ${location.pathname === path
-                            ? 'bg-neutral-900 text-white'
-                            : 'text-neutral-500 hover:bg-neutral-900 hover:text-white'}`}
-                >
-                    <Icon className="w-5 h-5" strokeWidth={1.5} />
-                    {isExpanded && <span className="text-sm">{label}</span>}
-                </Link>
-            ))}
+            <nav className="flex flex-col">
+                {navigationItems.map(({ icon, path }) => (
+                    <Link
+                        key={path}
+                        to={path}
+                        className="h-14 flex items-center justify-center relative"
+                    >
+                        <div
+                            className={`
+              p-3
+              rounded-[10px]
+              flex items-center justify-center
+              h-[40px] w-[40px]
+              transition-colors
+              ${location.pathname === path
+                                ? 'bg-[#242424] border-0.5 border-[#525252]'
+                                : 'hover:bg-[#242424]'
+                                }
+            `}
+                        >
+                            <FontAwesomeIcon
+                                icon={icon}
+                                className={`
+                w-5 
+                h-5 
+                ${location.pathname === path
+                                    ? 'text-[#FFFFFF]'
+                                    : 'text-[#858882] hover:text-[#FFFFFF]'
+                                    }
+              `}
+                            />
+                        </div>
+                    </Link>
+                ))}
+            </nav>
 
-            <div className="mt-auto border-t border-neutral-800">
-                <button
-                    onClick={handleLogout}
-                    className={`h-16 w-full flex items-center transition-colors text-neutral-500 hover:bg-neutral-900 hover:text-white
-                        ${isExpanded ? 'px-4 gap-3' : 'justify-center'}`}
-                >
-                    <LogOut className="w-5 h-5" strokeWidth={1.5} />
-                    {isExpanded && <span className="text-sm">Logout</span>}
-                </button>
-            </div>
+
+            <ProfileMenu onLogout={handleLogout} />
         </aside>
     );
 };

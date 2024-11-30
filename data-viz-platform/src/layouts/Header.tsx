@@ -11,7 +11,7 @@ const Header = () => {
 
     return (
         <header className="h-[87px] flex items-center justify-between px-6 bg-[#000000]">
-            <nav className="flex gap-2">
+            <nav className="flex gap-2 pl-5">
                 {navigationLinks.map((link) => (
                     <Link
                         key={link.path}
