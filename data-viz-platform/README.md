@@ -103,7 +103,8 @@ src/
 
    - **Best Scenario Results**
 
-   ![Screenshot 2024-11-30 at 11 12 28 AM](https://gist.github.com/user-attachments/assets/66cefbca-256b-4db2-92b1-ccf49e627856)
+   ![Screenshot 2024-11-30 at 11 12 28 AM](https://github.com/user-attachments/assets/ef6187bb-5220-4e1f-8dd8-361e5453af37)
+
 
 2. **Variable Editor**
   
@@ -121,7 +122,8 @@ src/
    - **Control Panel**
      - Variable information display on hover for 1.5s
 
-![Screenshot 2024-11-30 at 11 13 19 AM](https://gist.github.com/user-attachments/assets/b6eb2533-2d54-4083-ad7e-bea443ef587e)
+![Screenshot 2024-11-30 at 11 13 19 AM](https://github.com/user-attachments/assets/71363413-29b0-4060-bb5c-81a5a747e072)
+
 
 
 3. **Data Point Interactions**
@@ -136,21 +138,25 @@ src/
      - Real-time updates
 
    - **Detailed Information**
-     - Contextual data display
+     - Contextual data display using custom tooltip
 
-![Screenshot 2024-11-30 at 11 14 10 AM](https://gist.github.com/user-attachments/assets/c10b0142-7a8d-4b17-8f5d-dc574169ad10)
+![Screenshot 2024-11-30 at 11 14 10 AM](https://github.com/user-attachments/assets/a1598b59-96da-4390-ac42-95df8f347f93)
+
 
 4. **Auth Screen**
 
    - **SignIn**
 
-![Screenshot 2024-11-30 at 11 17 41 AM](https://gist.github.com/user-attachments/assets/851c1a1e-cd59-44a8-a87c-90666c85eab0)
+![Screenshot 2024-11-30 at 11 17 41 AM](https://github.com/user-attachments/assets/342b021b-864a-4327-ad41-012b4fdcfd2a)
+
 
    - **SignUp**
   
-  ![Screenshot 2024-11-30 at 11 19 31 AM](https://gist.github.com/user-attachments/assets/21b812a6-39d6-4108-94f8-80f1c981919b)
+  ![Screenshot 2024-11-30 at 11 19 31 AM](https://github.com/user-attachments/assets/0fb56f71-7036-4070-9e24-0ca448622972)
 
 ## Demo
+
+https://github.com/user-attachments/assets/f32274f8-2b3f-4f6f-8c30-10a69dbecf17
 
 ## 🧪 Testing
 
