@@ -1,4 +1,3 @@
-
 # Data Visualization Platform
 
 A modern React-based data visualization platform built with TypeScript, featuring real-time graph visualization, variable management, and interactive data exploration.
@@ -208,6 +207,45 @@ yarn preview
 3. Commit your changes: `git commit -am 'Add new feature'`
 4. Push to the branch: `git push origin feature/my-feature`
 5. Submit a pull request
+
+## ⚙️ Technical Decisions and Trade-offs
+
+### Framework: **React with TypeScript**
+- **Decision**: React was selected for its flexibility, extensive ecosystem, and strong community support. TypeScript was included to improve code maintainability and prevent runtime errors.
+- **Trade-off**: While React offers great flexibility, managing state in complex applications required adding a state management library (Redux Toolkit), increasing the initial setup effort.
+
+### State Management: **Redux Toolkit**
+- **Decision**: Used Redux Toolkit to manage global state efficiently, especially for handling dynamic variables and user interactions across components.
+- **Trade-off**: Introduced additional complexity and boilerplate compared to simpler solutions like Context API, which could be sufficient for smaller projects.
+
+### Styling: **Tailwind CSS**
+- **Decision**: Tailwind CSS was chosen for its utility-first approach, enabling faster prototyping and consistent styling across the application.
+- **Trade-off**: Heavy reliance on utility classes reduces code readability for developers unfamiliar with Tailwind and might require additional setup for customization.
+
+### Charts: **Recharts**
+- **Decision**: Recharts was chosen for its ease of use and ability to create responsive, interactive visualizations with minimal configuration.
+- **Trade-off**: Recharts may experience performance issues when dealing with large datasets or real-time updates, which could require optimization in future iterations.
+
+### Build Tool: **Vite**
+- **Decision**: Vite was selected for its fast build times and hot module replacement, improving developer productivity during the development phase.
+- **Trade-off**: Some developers accustomed to traditional build tools like Webpack might face a slight learning curve when switching to Vite.
+
+### Authentication: **Firebase Authentication**
+- **Decision**: Firebase Authentication was used for its quick setup and support for multiple authentication methods, including Google OAuth and email/password.
+- **Trade-off**: Locking into Firebase’s ecosystem might make it harder to migrate to alternative authentication solutions in the future.
+
+### Animations: **React Spring**
+- **Decision**: React Spring was used to implement smooth and modern animations, enhancing the user experience.
+- **Trade-off**: Introduced additional dependencies and slightly increased the application’s bundle size.
+
+### Responsive Design: **Desktop-First Approach**
+- **Decision**: Prioritized desktop-first design to optimize the platform for data analysis workflows, which typically occur on larger screens.
+- **Trade-off**: Mobile and tablet views have limited functionality compared to the desktop version, which may restrict accessibility for some users.
+
+### Hosting: **Firebase Hosting**
+- **Decision**: Firebase Hosting was chosen for its simplicity, scalability, and integration with Firebase Authentication and other services.
+- **Trade-off**: Dependence on Firebase could increase operational costs with higher usage and limit flexibility compared to self-hosted solutions.
+
 
 ## ⚠️ Known Limitations
 
