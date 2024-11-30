@@ -8,11 +8,11 @@ import KPICard from '../components/dashboard/KPICard';
 import ScenarioCard from '../components/dashboard/ScenarioCard';
 import { RootState } from '../store/store';
 import { setLoading, setError } from '../store/silces/dashboardSlice';
-import RightPanel from './RightPanel';
 import { togglePanel } from '../store/silces/rightPanelSlice';
 import ActionButton from '../components/shared/ActionButton';
 import ChevronUpButton from '../components/dashboard/ChevronUpButton';
 import ChevronDownButton from '../components/dashboard/ChevronDownButton';
+import { RightSidePanel } from './RightSidePanel';
 
 const DashboardLayout = () => {
     const [isScenarioCollapsed, setIsScenarioCollapsed] = useState(false);
@@ -148,7 +148,7 @@ const DashboardLayout = () => {
                             </div>
                         </div>
                     </div>
-                    <RightPanel />
+                    <RightSidePanel />
                 </div>
             </div>
         </div>
