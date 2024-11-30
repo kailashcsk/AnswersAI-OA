@@ -1,4 +1,3 @@
-// hooks/useHoverDelay.ts
 import { useRef, useEffect, useCallback, useState } from 'react';
 
 interface UseHoverDelayProps {

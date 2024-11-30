@@ -39,7 +39,6 @@ body {
   background: var(--border-color);
 }
 
-/* Remove default focus outlines and add custom ones */
 :focus {
   outline: none;
   ring: 2px solid var(--highlight-color);
