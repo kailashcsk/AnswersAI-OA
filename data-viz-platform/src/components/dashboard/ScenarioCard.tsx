@@ -9,15 +9,15 @@ const ScenarioCard = () => {
     const { scenarioResults } = useSelector((state: RootState) => state.dashboard);
 
     return (
-        <div className="space-y-2">
+        <div className="space-y-4">
             {scenarioResults.map((scenario) => (
                 <div
                     key={scenario.id}
-                    className="bg-black rounded-lg p-4 bg-[#CCFF0005] border border-custom-green "
+                    className="rounded-[6px] p-4 bg-[#CCFF0005] border border-custom-green xl:h-[54px]"
                 >
                     
                     <div className="flex justify-between items-center">
-                        <p className="text-[#C9FF3B] text-[16px] font-medium leading-6 text-left no-underline decoration-skip-ink-none font-inter">
+                        <p className="text-[#B3E237] text-[16px] font-[500] leading-[24px] text-left no-underline decoration-skip-ink-none font-inter">
                             {scenario.description}
                         </p>
                         <button
