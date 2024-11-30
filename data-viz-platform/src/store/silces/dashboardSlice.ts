@@ -4,6 +4,8 @@ interface ChartData {
     month: string;
     value: number;
     isCurrent?: boolean;
+    percentAboveTarget?: number;
+    day?: number;
 }
 
 interface KPIData {
@@ -30,13 +32,33 @@ interface DashboardState {
 
 const initialState: DashboardState = {
     chartData: [
-        { month: 'Apr', value: 40000 },
-        { month: 'May', value: 20000, isCurrent: true },
-        { month: 'Jun', value: 45000 },
-        { month: 'Jul', value: 90000 },
-        { month: 'Aug', value: 60000 },
-        { month: 'Sep', value: 35000 },
-        { month: 'Oct', value: 58000 },
+        { month: 'Apr', day: 1, value: 40000, percentAboveTarget: 3.5 },
+        { month: 'Apr', day: 15, value: 35000, percentAboveTarget: 3.2 },
+        { month: 'Apr', day: 30, value: 38000, percentAboveTarget: 3.8 },
+
+        { month: 'May', day: 1, value: 20000, isCurrent: true, percentAboveTarget: 4.6 },
+        { month: 'May', day: 15, value: 22000, percentAboveTarget: 4.8 },
+        { month: 'May', day: 30, value: 25000, percentAboveTarget: 5.0 },
+
+        { month: 'Jun', day: 1, value: 45000, percentAboveTarget: 5.1 },
+        { month: 'Jun', day: 15, value: 48000, percentAboveTarget: 5.3 },
+        { month: 'Jun', day: 30, value: 50000, percentAboveTarget: 5.5 },
+
+        { month: 'Jul', day: 1, value: 90000, percentAboveTarget: 7.2 },
+        { month: 'Jul', day: 15, value: 85000, percentAboveTarget: 7.0 },
+        { month: 'Jul', day: 30, value: 88000, percentAboveTarget: 7.1 },
+
+        { month: 'Aug', day: 1, value: 60000, percentAboveTarget: 4.8 },
+        { month: 'Aug', day: 15, value: 62000, percentAboveTarget: 5.0 },
+        { month: 'Aug', day: 30, value: 58000, percentAboveTarget: 4.7 },
+
+        { month: 'Sep', day: 1, value: 35000, percentAboveTarget: 3.9 },
+        { month: 'Sep', day: 15, value: 32000, percentAboveTarget: 3.7 },
+        { month: 'Sep', day: 30, value: 34000, percentAboveTarget: 3.8 },
+
+        { month: 'Oct', day: 1, value: 58000, percentAboveTarget: 4.7 },
+        { month: 'Oct', day: 15, value: 60000, percentAboveTarget: 4.9 },
+        { month: 'Oct', day: 30, value: 62000, percentAboveTarget: 5.0 }
     ],
     kpiData: [
         {

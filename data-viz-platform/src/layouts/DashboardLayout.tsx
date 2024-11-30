@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Zap, Sparkles } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpFromBracket, faClockRotateLeft } from '@fortawesome/free-solid-svg-icons';
-import Chart from '../components/dashboard/Chart';
+import ChartComponent from '../components/dashboard/ChartComponent';
 import KPICard from '../components/dashboard/KPICard';
 import ScenarioCard from '../components/dashboard/ScenarioCard';
 import { RootState } from '../store/store';
@@ -129,18 +129,15 @@ const DashboardLayout = () => {
                     </section>
 
                     {/* Chart and KPIs */}
-                    <div className="grid grid-cols-12 gap-6 pt-2 mb-10">
-                        <div className="col-span-12 lg:col-span-6 xl:col-span-7 2xl:col-span-8">
+                    <div className="grid grid-cols-12 gap-6 pt-2 mb-10 ">
+                        <div className="col-span-12 lg:col-span-6 xl:col-span-7 2xl:col-span-8 ">
                             <div className="flex justify-between items-center mb-4">
                                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold leading-tight sm:leading-9 text-left no-underline font-roobert">
                                     Graphs
                                 </h2>
                             </div>
 
-                            <Chart
-                                data={chartData}
-                                selectedMetric={selectedChartMetric}
-                            />
+                            <ChartComponent/>
                         </div>
                         <div className="col-span-12 lg:col-span-6 xl:col-span-5 2xl:col-span-4">
                             <div className="flex justify-between items-center mb-4">
