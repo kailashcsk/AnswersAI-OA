@@ -40,12 +40,12 @@ cp .env.example .env
 
 4. Update the `.env` file with the following configuration:
 ```env
-VITE_FIREBASE_API_KEY="AIzaSyDcTt8D1rJ7wHyEG4es6UbMuIUnk3L6GU4"
-VITE_FIREBASE_AUTH_DOMAIN="answersai-oa.firebaseapp.com"
-VITE_FIREBASE_PROJECT_ID="answersai-oa"
-VITE_FIREBASE_STORAGE_BUCKET="answersai-oa.firebasestorage.app"
-VITE_FIREBASE_MESSAGING_SENDER_ID="1021734015148"
-VITE_FIREBASE_APP_ID="1:1021734015148:web:51faac91f8f28f69168f09"
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
 ```
 
 5. Start the development server:
