@@ -57,7 +57,7 @@ const DashboardLayout = () => {
             <div className={`absolute inset-0 overflow-y-auto transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px] pointer-events-none' : ''}`}>
                 <div className="min-h-full p-10 pb-24 border border-[#525252] rounded-lg">
                     {/* Dashboard Header */}
-                    <div className="flex justify-between items-center mb-8">
+                    <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 md:gap-0">
                         {/* Left Section */}
                         <div className="flex items-center gap-2">
                             <Zap className="lightning-icon fill-current pr-2" />
@@ -71,8 +71,10 @@ const DashboardLayout = () => {
                                 aria-label="History"
                                 onClick={() => console.log('History clicked')}
                             >
-                                <FontAwesomeIcon icon={faClockRotateLeft} className="w-21 h-18 text-neutral-400 text-[#B9B9B9]" />
-
+                                <FontAwesomeIcon
+                                    icon={faClockRotateLeft}
+                                    className="w-21 h-18 text-neutral-400 text-[#B9B9B9]"
+                                />
                             </ActionButton>
 
                             {/* Edit Variables Button */}
@@ -96,7 +98,6 @@ const DashboardLayout = () => {
                             </ActionButton>
                         </div>
                     </div>
-
                     { /* Scenario Results */}
                     <section className="mb-8 ">
                         <div className="flex justify-between items-center mb-2">

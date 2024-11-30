@@ -9,15 +9,22 @@ const DashboardPage = () => {
 
     return (
         <div className="h-screen flex bg-black">
-            <div className={`transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px] pointer-events-none' : ''}`}>
+            {/* Sidebar - hidden on small screens, visible from medium screens up */}
+            <div className={`hidden md:block transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px] pointer-events-none' : ''
+                }`}>
                 <Sidebar />
             </div>
 
-            <div className="flex-1 flex flex-col ml-16">
-                <div className={`transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px] pointer-events-none' : ''}`}>
+            {/* Main content area - adjusts margin based on screen size */}
+            <div className="flex-1 flex flex-col ml-0 md:ml-16">
+                {/* Header - hidden on small screens, visible from medium screens up */}
+                <div className={`hidden md:block transition-all duration-300 ease-in-out ${isRightPanelOpen ? 'blur-[2px] pointer-events-none' : ''
+                    }`}>
                     <Header />
                 </div>
-                <main className="flex-1 min-h-0 overflow-hidden pl-4">
+
+                {/* Main content - full width on small screens */}
+                <main className="flex-1 min-h-0 overflow-hidden pl-0 md:pl-4">
                     <DashboardLayout />
                 </main>
             </div>
